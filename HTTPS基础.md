@@ -6,7 +6,7 @@ HTTPS(Hypertext Transfer Protocol over Secure Socket Layer)，是以安全为目
 
 SSL协议位于TCP/IP协议与各种应用协议之间，是一种国际标准的加密及身份认证通信协议，为TCP提供一个可靠的端到端的安全服务，为两个通讯个体之间提供保密性和完整性。SSL层所处位置如下
 
-![](\img\HTTPS\1.png)
+![](img/HTTPS/1.png)
 
 ## 2、 SSL协议
 
@@ -32,7 +32,7 @@ SSL协议位于TCP/IP协议与各种应用层协议之间，为数据通讯提�
 
     SSL握手的第一阶段启动逻辑连接，建立这个连接的安全能力。首先客户机向服务器发出client hello消息并等待服务器响应，随后服务器向客户机返回server hello消息，对client hello消息中的信息进行确认
 
-    ![](\img\HTTPS\4.png)
+    ![](img/HTTPS/4.png)
 
     Client hello消息包括Version，Random，Session id，Cipher suite，Compression method等信息
     
@@ -82,7 +82,7 @@ SSL协议位于TCP/IP协议与各种应用层协议之间，为数据通讯提�
 
     4. 服务器握手完成：第二阶段的结束，第三阶段开始的信号
 
-    ![](\img\HTTPS\6.png)
+    ![](img/HTTPS/6.png)
 
     在阶段1过程客户端与服务端协商的过程中已经确定使哪种密钥交换算法
 
@@ -98,7 +98,7 @@ SSL协议位于TCP/IP协议与各种应用层协议之间，为数据通讯提�
 
     4. 域名 domain，核查证书域名是否与当前的访问域名匹配，匹配规则后续分析
 
-    ![](\img\HTTPS\7.png)
+    ![](img/HTTPS/7.png)
 
     客户机启动SSL握手第3阶段，是本阶段所有消息的唯一发送方，服务器是所有消息的唯一接收方。该阶段分为3步：
 
@@ -110,7 +110,7 @@ SSL协议位于TCP/IP协议与各种应用层协议之间，为数据通讯提�
 
     下面介绍一下RSA方式的客户端验证和密钥交换
 
-    ![](\img\HTTPS\3.jpg)
+    ![](img/HTTPS/3.jpg)
 
     这种情况，除非服务器在阶段2明确请求，否则没有证书信息。客户端密钥交换方法包括阶段2收到的由RSA公钥加密的预备主密钥。
 
@@ -118,7 +118,7 @@ SSL协议位于TCP/IP协议与各种应用层协议之间，为数据通讯提�
 
 4. 完成
 
-    ![](\img\HTTPS\8.png)
+    ![](img/HTTPS/8.png)
 
     1. 客户端发送 change_cipher_spec ，通知服务器后续的通信都采用协商的通信密钥和加密算法进行加密通信
 
@@ -140,7 +140,7 @@ SSL协议位于TCP/IP协议与各种应用层协议之间，为数据通讯提�
 
 SSL的体系结构中包含两个协议子层，其中底层是SSL记录协议层（SSL Record Protocol Layer）；高层是SSL握手协议层（SSL HandShake Protocol Layer）。SSL的协议栈如图所示，其中阴影部分即SSL协议
 
-![](\img\HTTPS\2.jpg)
+![](img/HTTPS/2.jpg)
 
 SSL记录协议层的作用是为高层协议提供基本的安全服务。SSL纪录协议针对HTTP协议进行了特别的设计，使得超文本的传输协议HTTP能够在SSL运行。纪录封装各种高层协议，具体实施压缩解压缩、加密解密、计算和校验MAC等与安全有关的操作
 
@@ -241,37 +241,37 @@ SSL剥离，即将HTTPS连接降级到HTTP连接。假如客户端直接访问HT
 
 1. 使用 wireshark 进行抓包，查看数据包，发现使用的协议是TLSv1.2，客户端与服务器端交换数据包的情况符合本篇文档中所查到的资料所示
 
-![](\img\HTTPS\HTTPS.PNG)
+![](img/HTTPS/HTTPS.PNG)
 
 2. 查看Client Hello包
 
-![](\img\HTTPS\ClientHello.PNG)
+![](img/HTTPS/ClientHello.PNG)
 
-![](\img\HTTPS\ClientHello1.PNG)
+![](img/HTTPS/ClientHello1.PNG)
 
 3. 查看Server Hello包，但不知道为什么百度的会话ID为空，连续抓了几次都是这样。其他站点比如`www.bing.com`的 Server Hello 包中是存在会话ID的
 
-![](\img\HTTPS\ServerHello.PNG)
+![](img/HTTPS/ServerHello.PNG)
 
 4. 查看服务器端发送的证书、服务器公钥，当到Server Hello done时表示服务器的Server Hello至此结束
 
-![](\img\HTTPS\ServerCerificate.PNG)
+![](img/HTTPS/ServerCerificate.PNG)
 
-![](\img\HTTPS\ServerKeyExchange.PNG)
+![](img/HTTPS/ServerKeyExchange.PNG)
 
-![](\img\HTTPS\ServerHelloDone.PNG)
+![](img/HTTPS/ServerHelloDone.PNG)
 
 5. 客户端进行密钥交换，并通知后续的通信都采用协商的通信密钥和加密算法，以及hash供服务端检验
 
-![](\img\HTTPS\ClientKeyExchange.PNG)
+![](img/HTTPS/ClientKeyExchange.PNG)
 
 6. 发现服务器端发送了一个`New Session Ticket`，ticket中是包含了加密参数等连接信息。当需要重连的时候，客户端将ticket发送给服务器。这样双方就得到了重用的加密参数
 
-![](\img\HTTPS\Session_Ticket.PNG)
+![](img/HTTPS/Session_Ticket.PNG)
 
 7. 服务器端通知后续的通信都采用协商的通信密钥和加密算法，并提供hash值供客户端进行校验，至此HTTPS握手全部完成，开始进行加密数据传输
 
-![](\img\HTTPS\ApplicationData.PNG)
+![](img/HTTPS/ApplicationData.PNG)
 
 ## 5、 参考
 

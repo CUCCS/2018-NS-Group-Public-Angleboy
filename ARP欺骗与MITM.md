@@ -6,7 +6,7 @@
 
 通常，当攻击者想要将自己置于客服端和服务器之间时，他们需要欺骗两个系统的ARP。这不是进行MiTM的唯一方法，但它可能是局域网（LAN）上最常见的方法
 
-![](\img\ARP\1.webp)
+![](img/ARP/1.webp)
 
 MiTM攻击是黑客攻击最受欢迎和最有效的攻击之一。在最简单的形式中，MiTM就是攻击者将自己放置在客服端和服务器之间的地方，并允许所有流量透明地通过他们的系统。这要求攻击者说服服务器他是客服端**并**说明客服端他们是服务器。当然，这两个系统的风险在于中间人可以看到他们的所有流量，如果他们选择，则可以改变数据包
 
@@ -24,7 +24,7 @@ MiTM攻击的风险：
 
 ARP是地址解析协议，它在物理MAC地址和逻辑IP地址之间进行转换。实质上，它将网络层地址转换为数据链路层地址。这使得网络交换机和其他网络设备能够识别哪个NIC卡具有哪个IP地址，从而向每个系统发送正确的数据包
 
-![](\img\ARP\2.webp)
+![](img/ARP/2.webp)
 
 在局域网的任意一台主机中，都有一个ARP缓存表，里面保存本机已知的此局域网中各主机个路由器的IP地址和MAC地址的对照关系。ARP缓存表的生命周期是有时限的（一般不超过20分钟）
 
@@ -74,7 +74,7 @@ ARP是地址解析协议，它在物理MAC地址和逻辑IP地址之间进行转
 
     - eth0 host-only 192.168.56.102
 
-![](\img\ARP\networks_topolpgy.PNG)
+![](img/ARP/networks_topolpgy.PNG)
 
 
 ## 相关配置及要求
@@ -109,29 +109,29 @@ ARP是地址解析协议，它在物理MAC地址和逻辑IP地址之间进行转
 
 - 靶机
 
-![](\img\ARP\drone_ifconfig.PNG)
+![](img/ARP/drone_ifconfig.PNG)
 
 - 网关
 
-![](\img\ARP\gateway_ifconfig.PNG)
+![](img/ARP/gateway_ifconfig.PNG)
 
 - 攻击者
 
-![](\img\ARP\attack_ifconfig.PNG)
+![](img/ARP/attack_ifconfig.PNG)
 
 2. 查看各虚拟机arp表
 
 - 靶机
 
-![](\img\ARP\drone_arp.PNG)
+![](img/ARP/drone_arp.PNG)
 
 - 网关
 
-![](\img\ARP\gateway_arp.PNG)
+![](img/ARP/gateway_arp.PNG)
 
 - 攻击者
 
-![](\img\ARP\attack_arp.PNG)
+![](img/ARP/attack_arp.PNG)
 
 3. 开始进行中间人攻击
 
@@ -143,7 +143,7 @@ ARP是地址解析协议，它在物理MAC地址和逻辑IP地址之间进行转
 
 6. 单击`Hosts`选项，选择`Scan for host`，然后选择`Host list`，此时可以看到ettercap-NG已经扫描的主机列表
 
-![](\img\ARP\Mitm0.PNG)
+![](img/ARP/Mitm0.PNG)
 
 7. 选择要进行攻击的目标
 
@@ -157,15 +157,15 @@ ARP是地址解析协议，它在物理MAC地址和逻辑IP地址之间进行转
 
 - 靶机
 
-![](\img\ARP\drone_arp1.PNG)
+![](img/ARP/drone_arp1.PNG)
 
 - 网关
 
-![](\img\ARP\gateway_arp1.PNG)
+![](img/ARP/gateway_arp1.PNG)
 
 攻击者转发靶机与网关的通信
 
-![](\img\ARP\Mitm1.PNG)
+![](img/ARP/Mitm1.PNG)
 
 ## 实验二 arpspoof进行中间人欺骗
 
@@ -177,7 +177,7 @@ ARP是地址解析协议，它在物理MAC地址和逻辑IP地址之间进行转
     
     查看arp表，发现arp欺骗成功
 
-![](\img\ARP\arpspoof0.PNG)
+![](img/ARP/arpspoof0.PNG)
 
 ## 参考
 

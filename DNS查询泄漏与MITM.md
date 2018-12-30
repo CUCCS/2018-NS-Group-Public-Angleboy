@@ -10,7 +10,7 @@
 
 DNS泄密是一种主要的隐私威胁，因为匿名网络可能在私有数据泄露时提供错误的安全感
 
-![](\img\DNS\1.png)
+![](img/DNS/1.png)
 
 ## 透明DNS代理
 
@@ -20,7 +20,7 @@ DNS泄密是一种主要的隐私威胁，因为匿名网络可能在私有数�
 
 如果你的ISP实现了透明的DNS代理，那么使用DNS泄露修复时非常重要的，以确保当你连接到VPN时，你的请求不会被拦截
 
-![](\img\DNS\2.png)
+![](img/DNS/2.png)
 
 ## 如何修复DNS泄露
 
@@ -48,7 +48,7 @@ DNS泄密是一种主要的隐私威胁，因为匿名网络可能在私有数�
 
 如果在Windows XP / Vista / 7上使用OpenVPN，则可以使用完全自动化的解决方案
 
-下载[dnsfixsetup.exe](https://www.dnsleaktest.com/dnsfixsetup.exe)- （md5 checksum：f212a015a890bd2dae67bc8f8aa8bfd9）\
+下载[dnsfixsetup.exe](https://www.dnsleaktest.com/dnsfixsetup.exe)- （md5 checksum：f212a015a890bd2dae67bc8f8aa8bfd9）
 
 安装后，连接到VPN服务器时，将运行批处理文件执行上述3个步骤
 
@@ -68,7 +68,7 @@ DNS泄密是一种主要的隐私威胁，因为匿名网络可能在私有数�
 
         netsh interface show interface
 
-![](\img\DNS\winfix1.png)
+![](img/DNS/winfix1.png)
 
 3. 连接到VPN。连接后，继续下一步
 
@@ -162,7 +162,7 @@ DNS欺骗就是攻击者冒充域名服务器的一种欺骗行为
 
         - eth0 host-only 192.168.56.102
 
-    ![](\img\ARP\networks_topolpgy.PNG)
+    ![](img/ARP/networks_topolpgy.PNG)
 
 2. 相关配置及要求
 
@@ -195,14 +195,14 @@ DNS欺骗就是攻击者冒充域名服务器的一种欺骗行为
         *       A       192.168.56.102
         *       PRT     192.168.56.102
 
-   ![](\img\DNS\dnsspoof1.png)
+   ![](img/DNS/dnsspoof1.png)
 
 4. 开启攻击者主机上服务器
 
         /etc/init.d/apache2 start
         # 若想要修改dns欺骗之后显示的网页，需要进入/var/www/html中修改index.html文件
 
-    ![](\img\DNS\dnsspoof0.png)
+    ![](img/DNS/dnsspoof0.png)
 
 5. 启动ettercap
 
@@ -216,11 +216,11 @@ DNS欺骗就是攻击者冒充域名服务器的一种欺骗行为
 
     DNS欺骗前ping百度，显示的IP地址为`220.181.111.37`，经过查询，确实是百度的IP地址
 
-    ![](\img\DNS\dnsspoof3.png)
+    ![](img/DNS/dnsspoof3.png)
 
     DNS欺骗后ping百度，显示的IP地址为攻击者主机的IP地址
 
-    ![](\img\DNS\dnsspoof2.png)
+    ![](img/DNS/dnsspoof2.png)
 
 
 
