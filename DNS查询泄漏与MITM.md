@@ -195,14 +195,14 @@ DNS欺骗就是攻击者冒充域名服务器的一种欺骗行为
         *       A       192.168.56.102
         *       PRT     192.168.56.102
 
-   ![](img/DNS/dnsspoof1.png)
+   ![](img/DNS/dnsspoof1.PNG)
 
 4. 开启攻击者主机上服务器
 
         /etc/init.d/apache2 start
         # 若想要修改dns欺骗之后显示的网页，需要进入/var/www/html中修改index.html文件
 
-    ![](img/DNS/dnsspoof0.png)
+    ![](img/DNS/dnsspoof0.PNG)
 
 5. 启动ettercap
 
@@ -216,11 +216,11 @@ DNS欺骗就是攻击者冒充域名服务器的一种欺骗行为
 
     DNS欺骗前ping百度，显示的IP地址为`220.181.111.37`，经过查询，确实是百度的IP地址
 
-    ![](img/DNS/dnsspoof3.png)
+    ![](img/DNS/dnsspoof3.PNG)
 
     DNS欺骗后ping百度，显示的IP地址为攻击者主机的IP地址
 
-    ![](img/DNS/dnsspoof2.png)
+    ![](img/DNS/dnsspoof2.PNG)
 
 
 
