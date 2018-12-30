@@ -175,7 +175,7 @@ ssl劫持和之前v2版实验一样，无法建立连接，会进行证书校验
 
 ![](img/Bettercap/alibaba.PNG)
 
-想到不可能12306和alibaba会遇到ssl剥离，而百度不会，于是清除了浏览器的所有缓存和历史记录，再去访问百度，此时成功ssl剥离，网址变为`wwww.baidu.com`
+想到不可能12306和alibaba会遇到ssl剥离，而百度不会，于是清除了浏览器的所有缓存和历史记录，再去访问百度，此时成功ssl剥离，网址变为`wwwww.baidu.com`
 
 ![](img/Bettercap/baidu.PNG)
 
