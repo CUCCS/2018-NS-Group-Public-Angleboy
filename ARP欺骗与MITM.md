@@ -139,21 +139,21 @@ ARP是地址解析协议，它在物理MAC地址和逻辑IP地址之间进行转
 
         ettercap -G
 
-5. 打开ettercap-NG 的图形界面之后点击`sniff`，选择`unified sniffing`然后根据自己的要求选择要抓包的网卡
+4. 打开ettercap-NG 的图形界面之后点击`sniff`，选择`unified sniffing`然后根据自己的要求选择要抓包的网卡
 
-6. 单击`Hosts`选项，选择`Scan for host`，然后选择`Host list`，此时可以看到ettercap-NG已经扫描的主机列表
+5. 单击`Hosts`选项，选择`Scan for host`，然后选择`Host list`，此时可以看到ettercap-NG已经扫描的主机列表
 
 ![](img/ARP/Mitm0.PNG)
 
-7. 选择要进行攻击的目标
+6. 选择要进行攻击的目标
 
     - 选择靶机`192.168.56.105`的IP地址，点击`Add to Target 1`
 
     - 选择网关`192.168.56.106`的IP地址，点击`Add to Target 2`
 
-8. 选择`mitm` —> `arp poisoning` —> `Sniff remote connections` —> `确定`
+7. 选择`mitm` —> `arp poisoning` —> `Sniff remote connections` —> `确定`
 
-9. 再次查看各虚拟机arp表，发现已被毒化
+8. 再次查看各虚拟机arp表，发现已被毒化
 
 - 靶机
 
